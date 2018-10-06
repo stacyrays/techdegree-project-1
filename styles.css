@@ -1,0 +1,13 @@
+body {
+  background: #93c8fb;
+  font-family: sans-serif;
+  font-size:22px;
+  color:#045cae;
+  text-align: center;
+  padding:40px;
+}
+
+.name {
+  font-size: 12px;
+  font-style: italic;
+}
