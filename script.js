@@ -68,7 +68,7 @@ function getRandomQuote() {
   printQuote();
 }
 
-//I couldn't figure out how exactly to make the quotes change just in a setTimeOut function. So I found a loop that sort of works. And it was on this link: https://wsvincent.com/javascript-closure-settimeout-for-loop/
+//I couldn't figure out how exactly to make the quotes change just in a setTimeOut function. So I found a for loop that counts up until 100, and each time it executes the setTimeOut code block. This link helped me understand how to get this to work; had an example: https://wsvincent.com/javascript-closure-settimeout-for-loop/
 for (var i = 1; i <= 100; i++) {
   (function(i) {
     setTimeout(function() {
