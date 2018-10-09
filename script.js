@@ -49,38 +49,34 @@ var quotes = [
 ];
 
 //Set up the button event listener to run the gerRandomQuote function
-myButton.addEventListener("click", getRandomQuote);
+myButton.addEventListener("click", printQuote);
 
-//Function definition for returning a random quote
-function getRandomQuote() {
-  //Random number method can be used to pick out from the array which quote to display
-  var randNum = Math.floor(Math.random() * 5);
+//Function definition for printing a quote
+function printQuote() {
+  //Call out the get random quote function
+  getRandomQuote();
 
-  //This function prints the html onto the screen
-  function printQuote(){
+  //Gets a random number to decide which quote object to select from the quotes array
+  function getRandomQuote(){
+    //random number formula that picks a random number between 0 - 5
+
+    var randNum = Math.floor(Math.random() * 5);
+
+    //switches the html out to new quote
     quotePara.innerHTML = quotes[randNum].fullQuote();
 
     //Changes body background color
     document.body.style.backgroundColor = quotes[randNum].background;
   }
 
-  //Run the print quote function
-  printQuote();
 }
+//Run the print quote function
+printQuote();
 
 //I couldn't figure out how exactly to make the quotes change just in a setTimeOut function. So I found a for loop that counts up until 100, and each time it executes the setTimeOut code block. This link helped me understand how to get this to work; had an example: https://wsvincent.com/javascript-closure-settimeout-for-loop/
 for (var i = 1; i <= 100; i++) {
   (function(i) {
     setTimeout(function() {
-      //alert(i);
-      var randNum = Math.floor(Math.random() * 5);
-
-      function printQuote(){
-        quotePara.innerHTML = quotes[randNum].fullQuote();
-
-        //Changes body background color
-        document.body.style.backgroundColor = quotes[randNum].background;
-      }
       printQuote();
     }, i*5000);
   })(i);
