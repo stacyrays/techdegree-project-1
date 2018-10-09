@@ -1,5 +1,6 @@
 // FSJS - Random Quote Generator
-//
+
+//Declare variables
 var randNum;
 var randQuote;
 var randSource;
@@ -7,7 +8,7 @@ var randCitation;
 var randYear;
 var randBg;
 
-// Create the array of quote objects and name it quotes
+// Create the array of quote objects
 var quotes = [
   {
     quote: "You know you are in love when you cannot fall asleep because reality is finally better than your dreams.",
@@ -60,11 +61,8 @@ function getRandomQuote(){
 // Create the printQuote function and name it printQuote
 function printQuote(){
   getRandomQuote();
-  console.log("you clicked it");
   document.getElementsByClassName("quote")[0].innerHTML = randQuote;
   document.getElementsByClassName("source")[0].innerHTML = randSource + "<span class='citation'>" + randCitation + "</span><span class='year'>" + randYear + "</span>";
-  //document.getElementsByClassName("citation").innerText = randCitation;
-  //document.getElementsByClassName("year").innerText = randYear;
   document.body.style.backgroundColor = randBg;
 }
 
